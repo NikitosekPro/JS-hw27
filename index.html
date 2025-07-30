@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div class="gallery"></div>
+        <div class="palette js-palette"></div>
+
+    <template id="countries">
+      {{#each countries}}
+            <li class="gallery__item">
+            <div class="gallery__thumb">
+                <img src="{{flag}}" alt="Флаг {{name}}" width="320">
+            </div>
+            <h2>{{name}}</h2>
+            <p><b>Столиця: {{capital}}</b> </p>
+            <p><b>Валюта:</b> {{currency}}</p>
+            <p><b>Офиційна мова:</b> {{language}}</p>
+            <p><b>Населення:</b> {{population}} людей</p>
+
+            {{#if infected}}
+                    <p style="color: red;">Все пропало!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+              {{/if}}
+
+              {{#unless license}}
+                  <p style="color: green;">Фух, все добре</p>
+                {{/unless}}
+
+        </li>
+        {{/each}}
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
